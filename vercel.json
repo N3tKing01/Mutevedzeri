@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "BREAL-MD-dashboard",
+  "functions": {
+    "api/vercel-handler.js": {
+      "maxDuration": 30
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/vercel-handler.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/vercel-handler.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
